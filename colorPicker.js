@@ -55,7 +55,7 @@ resetBtn.addEventListener('click', function resetAll(){
     squares[i].style.backgroundColor = colors[i]; 
   }
   messageDisplay.innerHTML = '';
-  document.querySelector('h1').style.backgroundColor = '#232323';
+  document.querySelector('h1').style.backgroundColor = 'steelblue';
 
 });
 
