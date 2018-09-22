@@ -15,13 +15,15 @@ body {
 
 h1 {
   color: white;
+  background-color: blueviolet;
+  height: 200px;
 }
 
-/* #message {
-  margin: 0 auto;
-  color: white;
-} */
-
+#stripe {
+  background-color: white;
+  height: 30px;
+}
+/* 
 span  {
   color: white;
-}
+} */

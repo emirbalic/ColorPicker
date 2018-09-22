@@ -1,35 +1,39 @@
 var colors = generateRandomColors(6);
 
-
-// [
-//   "rgb(255, 0, 0)",
-//   "rgb(255, 255, 0)",
-//   "rgb(0, 255, 0)",
-//   "rgb(0, 255, 255)",
-//   "rgb(0, 0, 255)",
-//   "rgb(255, 0, 255)"
-// ];
-
 var squares = document.querySelectorAll(".square");
-//var rgbCode = 255;
+
 var pickedColor = pickColor(); //pickRandomColor(rgbCode);
 var colorDisplay = document.getElementById('colorDisplay');
 colorDisplay.textContent = pickedColor; 
 var messageDisplay = document.querySelector('#message');
  
+var resetBtn = document.getElementById('reset');
+
+
+
+resetBtn.addEventListener('click', function resetAll(){
+  colors = generateRandomColors(6);
+  pickedColor = pickColor();  
+  colorDisplay.textContent = pickedColor;
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = colors[i]; 
+  }
+  messageDisplay.innerHTML = '';
+  document.querySelector('h1').style.backgroundColor = '#232323';
+
+})
 
 for (var i = 0; i < squares.length; i++) {
-  squares[i].style.backgroundColor = colors[i]; //pickRandomColor(); //
-  // squares[i].style.backgroundColor = pickRandomColor(rgbCode);
+  squares[i].style.backgroundColor = colors[i]; 
 
   squares[i].addEventListener('click', function pickColorAno(){
     
     var clickedColor = this.style.backgroundColor;
 
-    //console.log(clickedColor, pickedColor);
     if(clickedColor === pickedColor){
       
       messageDisplay.innerHTML = 'Correct';
+      resetBtn.textContent = 'Play again?';
       resetPicker(clickedColor);
 
     } else {
@@ -69,14 +73,4 @@ function randomColor(){
 
 }
 
-// function pickRandomColor(howmany){
-  
-//   var colorRGB = "rgb(" + pickRandomNumer(howmany) +" ," + pickRandomNumer(howmany) + " ," + pickRandomNumer(howmany)+ ")";
-//   //console.log(colorRGB);
-//   return colorRGB;
-// }
 
-// function pickRandomNumer(howmany){
-//   //console.log(howmany);
-//   return Math.floor(Math.random()* Number(howmany) +1);
-//}
