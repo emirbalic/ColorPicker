@@ -56,7 +56,7 @@ resetBtn.addEventListener('click', function resetAll(){
   }
   messageDisplay.innerHTML = '';
   document.querySelector('h1').style.backgroundColor = 'steelblue';
-
+  this.textContent = 'New colors';
 });
 
 for (var i = 0; i < squares.length; i++) {
